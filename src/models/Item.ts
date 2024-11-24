@@ -7,7 +7,6 @@ export interface IItem extends Document {
   isFolder: boolean;
   parentId: string | null;
   order: number;
-  items?: IItem[];
   isOpen?: boolean;
 }
 
@@ -18,7 +17,6 @@ const ItemSchema: Schema = new Schema({
   isFolder: { type: Boolean, required: true },
   parentId: { type: String, default: null },
   order: { type: Number, required: true },
-  items: [{ type: String }],
   isOpen: { type: Boolean },
 });
 

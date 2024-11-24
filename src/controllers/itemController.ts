@@ -91,7 +91,7 @@ export const updateItems = async (req: Request, res: Response) => {
     for (const item of items) {
       await Item.findOneAndUpdate(
         { id: item.id },
-        { order: item.order, parentId: item.parentId, items: item.items?.map(i => i.id) }
+        { order: item.order, parentId: item.parentId }
       );
     }
 
